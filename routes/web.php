@@ -1,8 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProdutoController;
 
-Route::view('/', 'welcome');
+Route::view('/', 'produtos.index');
+
+Route::get('/produtos', [ProdutoController::class, 'index'])->name('produtos.index');
+
+
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

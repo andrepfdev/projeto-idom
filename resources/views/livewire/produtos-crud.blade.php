@@ -58,7 +58,7 @@
                     <tr class="border-t">
                         <td class="px-6 py-4">{{ $produto->nome }}</td>
                         <td class="px-6 py-4">R$ {{ number_format($produto->preco, 2, ',', '.') }}</td>
-                        <td class="px-6 py-4">{{ $produto->fornecedor_id }}</td>
+                        <td class="px-6 py-4">{{ $produto->fornecedor->nome }}</td>
                         <td class="px-6 py-4">
                             <button wire:click="edit({{ $produto->id }})" 
                                     class="bg-blue-500 text-white px-3 py-1 rounded" style="background-color: rgb(11, 101, 204);">

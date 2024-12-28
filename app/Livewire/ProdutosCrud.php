@@ -70,7 +70,7 @@ class ProdutosCrud extends Component
     }
     public function render()
     {
-        $produtos = Produto::paginate(5);
+        $produtos = Produto::with('fornecedor')->paginate(5);
 
         return view('livewire.produtos-crud', [
             'produtos' => $produtos,

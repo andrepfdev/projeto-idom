@@ -76,7 +76,7 @@
         </table>
 
         <div class="p-4">
-            {{-- {{ $produtos->links() }} --}}
+            {{ $produtos->links() }}
         </div>
     </div>
 </div>

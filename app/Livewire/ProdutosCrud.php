@@ -13,7 +13,6 @@ class ProdutosCrud extends Component
 
     public $nome, $preco, $descricao, $fornecedor_id;
     public $fornecedores = [];
-    public $produtos = [];
     public  $isOpen = false;
     public $editing = false;
 
@@ -32,7 +31,6 @@ class ProdutosCrud extends Component
     public function loadData()
     {
         $this->fornecedores = Fornecedor::all();
-        $this->produtos = Produto::with('fornecedor')->get();
     }
 
     public function save()
@@ -72,6 +70,10 @@ class ProdutosCrud extends Component
     }
     public function render()
     {
-        return view('livewire.produtos-crud');
+        $produtos = Produto::paginate(5);
+
+        return view('livewire.produtos-crud', [
+            'produtos' => $produtos,
+        ]);
     }
 }

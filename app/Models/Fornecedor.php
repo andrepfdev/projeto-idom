@@ -9,7 +9,9 @@ class Fornecedor extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nome', 'contato', 'endereço'];
+    // Nome correto da tabela
+    protected $table = 'fornecedores';
+    protected $fillable = ['nome', 'contato', 'endereco'];
 
     public function produtos()
     {

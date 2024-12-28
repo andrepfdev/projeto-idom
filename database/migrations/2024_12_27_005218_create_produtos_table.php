@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->decimal(    'preco', 10, 2);
-            $table->text('descricao');
+            $table->text('descricao')->nullable();
             $table->foreignId('fornecedor_id')->constrained('fornecedores');
             $table->timestamps();
         });

@@ -10,25 +10,25 @@
     <form wire:submit="save" class="space-y-4">
         <div>
             <label for="nome" class="block text-sm font-medium">Nome do Produto</label>
-            <input type="text" id="nome" wire:model="nome" class="w-full border rounded p-2" />
+            <input type="text" id="nome" wire:model="nome" class="w-full border rounded p-2" style="border-color: #aaaaaaa2;" />
             @error('nome') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
         </div>
 
         <div>
             <label for="preco" class="block text-sm font-medium">Preço</label>
-            <input type="number" step="0.01" id="preco" wire:model="preco" class="w-full border rounded p-2" />
+            <input type="number" step="0.01" id="preco" wire:model="preco" class="w-full border rounded p-2" style="border-color: #aaaa;" />
             @error('preco') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
         </div>
 
         <div>
             <label for="descricao" class="block text-sm font-medium">Descrição</label>
-            <textarea id="descricao" wire:model="descricao" class="w-full border rounded p-2"></textarea>
+            <textarea id="descricao" wire:model="descricao" class="w-full border rounded p-2" style="border-color: #aaaa;"></textarea>
             @error('descricao') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
         </div>
 
         <div>
             <label for="fornecedor_id" class="block text-sm font-medium">Fornecedor</label>
-            <select id="fornecedor_id" wire:model="fornecedor_id" class="w-full border rounded p-2">
+            <select id="fornecedor_id" wire:model="fornecedor_id" class="w-full border rounded p-2" style="border-color: #aaaa;">
                 <option value="">Selecione um fornecedor</option>
                 @foreach($fornecedores as $fornecedor)
                     <option value="{{ $fornecedor->id }}">{{ $fornecedor->nome }}</option>
@@ -58,7 +58,7 @@
                     <tr class="border-t">
                         <td class="px-6 py-4">{{ $produto->nome }}</td>
                         <td class="px-6 py-4">R$ {{ number_format($produto->preco, 2, ',', '.') }}</td>
-                        <td class="px-6 py-4">{{ $produto->fornecedor_id }}</td>
+                        <td class="px-6 py-4">{{ $produto->fornecedor->nome }}</td>
                         <td class="px-6 py-4">
                             <button wire:click="edit({{ $produto->id }})" 
                                     class="bg-blue-500 text-white px-3 py-1 rounded" style="background-color: rgb(11, 101, 204);">

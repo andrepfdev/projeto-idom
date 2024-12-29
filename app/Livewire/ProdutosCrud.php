@@ -13,8 +13,6 @@ class ProdutosCrud extends Component
 
     public $nome, $preco, $descricao, $fornecedor_id;
     public $fornecedores = [];
-    public  $isOpen = false;
-    public $editing = false;
 
     protected $rules = [
         'nome' => 'required|string|max:255',
@@ -57,9 +55,6 @@ class ProdutosCrud extends Component
         $this->preco = $produto->preco;
         $this->descricao = $produto->descricao;
         $this->fornecedor_id = $produto->fornecedor_id;
-
-        $this->editing = true;
-        $this->isOpen = true;
     }
     
     public function delete($id)

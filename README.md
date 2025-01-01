@@ -27,7 +27,6 @@ wsl --install -d Ubuntu
 
 1. Clone o repositório dentro do WSL:
 ```bash
-cd ~
 git clone [URL_DO_SEU_REPOSITORIO]
 cd [NOME_DO_PROJETO]
 ```

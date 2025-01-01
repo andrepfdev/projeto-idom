@@ -7,7 +7,7 @@
         </div>
     @endif --}}
 
-    <form wire:submit="save" class="space-y-4">
+    <form wire:submit.prevent="save" class="space-y-4">
         <div>
             <label for="nome" class="block text-sm font-medium">Nome do Produto</label>
             <input type="text" id="nome" wire:model="nome" class="w-full border rounded p-2" style="border-color: #aaaaaaa2;" />
